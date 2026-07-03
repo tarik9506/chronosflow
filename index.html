@@ -150,7 +150,1442 @@
         <section id="page-marketing" class="page-transition block">
             
             <!-- Hero Layer -->
-            <div class="relative py-12 md:py-24 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-1 
+            <div class="relative py-12 md:py-24 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Hand copy column -->
+                <div class="lg:col-span-7 space-y-8 text-left">
+                    <div class="inline-flex items-center space-x-2 bg-slate-900/80 border border-purple-500/20 px-3 py-1.5 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
+                        <span class="text-xs font-semibold tracking-wider uppercase text-purple-300">Next-Gen SaaS Timer Platform</span>
+                    </div>
+
+                    <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-none">
+                        Never Miss <br class="hidden sm:inline" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-orange">The Moment.</span> <br />
+                        Track, Hype & Launch.
+                    </h1>
+
+                    <p class="text-slate-300 text-lg sm:text-xl max-w-xl font-light leading-relaxed">
+                        The ultimate high-utility dashboard to engineer anticipation. Build, custom-brand, and embed hyper-precise real-time countdown clocks into Notion, Slack, websites, or project systems in under 60 seconds.
+                    </p>
+
+                    <!-- Interactive Fast Onboarding Triggers -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 max-w-lg">
+                        <div class="relative flex-grow">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"><i class="fa-solid fa-font"></i></span>
+                            <input id="hero-quick-title" type="text" placeholder="E.g., Global Product Launch" 
+                                   class="w-full bg-slate-900/60 border border-slate-800 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-all" />
+                        </div>
+                        <button onclick="claimHeroTimer()" class="bg-gradient-to-r from-neon-cyan to-indigo-600 hover:opacity-90 font-bold text-sm text-slate-950 px-6 py-4 rounded-xl transition-all shadow-lg shadow-cyan-500/20 whitespace-nowrap">
+                            Create First Timer <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+
+                    <!-- Client Trust Logotypes -->
+                    <div class="pt-6 border-t border-slate-900 space-y-3">
+                        <p class="text-xs font-semibold tracking-widest uppercase text-slate-500">Trusted by modern fast-movers</p>
+                        <div class="flex flex-wrap gap-x-8 gap-y-4 items-center opacity-60">
+                            <span class="text-sm font-bold tracking-wider text-slate-400 font-mono"><i class="fa-brands fa-stripe mr-1"></i> STRIPE</span>
+                            <span class="text-sm font-bold tracking-wider text-slate-400 font-mono"><i class="fa-brands fa-slack mr-1"></i> SLACK</span>
+                            <span class="text-sm font-bold tracking-wider text-slate-400 font-mono"><i class="fa-brands fa-notion mr-1"></i> NOTION</span>
+                            <span class="text-sm font-bold tracking-wider text-slate-400 font-mono"><i class="fa-brands fa-figma mr-1"></i> FIGMA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hand interactive Hero Widget -->
+                <div class="lg:col-span-5 relative w-full flex justify-center">
+                    <!-- Glass outer container reminiscent of purple layout design in image_0751e8.jpg -->
+                    <div class="w-full max-w-md glass-panel-neon rounded-3xl p-6 relative overflow-hidden group">
+                        <!-- Floating graphic artifacts -->
+                        <div class="absolute -top-12 -right-12 w-28 h-28 bg-purple-600/30 rounded-full filter blur-xl"></div>
+                        <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-cyan-600/20 rounded-full filter blur-xl"></div>
+
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between pb-4 border-b border-white/5">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                            </div>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-purple-400 font-mono">LIVE PREVIEW MODIFIER</span>
+                        </div>
+
+                        <!-- Main Countdown Demonstration (Live ticking!) -->
+                        <div class="py-8 text-center space-y-6">
+                            <div class="space-y-1">
+                                <span id="hero-widget-badge" class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-xs font-semibold rounded-full text-purple-300">
+                                    <i class="fa-regular fa-clock mr-1 animate-spin" style="animation-duration: 3s;"></i> Dynamic Showcase
+                                </span>
+                                <h3 id="hero-widget-title" class="text-2xl font-bold tracking-tight text-white pt-2">V2 Launch Countdown</h3>
+                                <p class="text-xs text-slate-400 max-w-xs mx-auto">Click "Go to Workspace" or change values below to test live ticking mechanisms!</p>
+                            </div>
+
+                            <!-- The big numbers (Tabular lining numerals to prevent shifting) -->
+                            <div class="grid grid-cols-4 gap-2 px-2">
+                                <div class="bg-space-950/80 rounded-xl p-3 border border-white/5 relative">
+                                    <div id="hero-days" class="text-3xl font-bold text-glow-purple text-purple-400 font-mono-tabular">02</div>
+                                    <span class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Days</span>
+                                </div>
+                                <div class="bg-space-950/80 rounded-xl p-3 border border-white/5 relative">
+                                    <div id="hero-hours" class="text-3xl font-bold text-glow-purple text-purple-400 font-mono-tabular">14</div>
+                                    <span class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Hours</span>
+                                </div>
+                                <div class="bg-space-950/80 rounded-xl p-3 border border-white/5 relative">
+                                    <div id="hero-mins" class="text-3xl font-bold text-glow-purple text-purple-400 font-mono-tabular">39</div>
+                                    <span class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Mins</span>
+                                </div>
+                                <div class="bg-space-950/80 rounded-xl p-3 border border-white/5 relative">
+                                    <div id="hero-secs" class="text-3xl font-bold text-glow-cyan text-cyan-400 font-mono-tabular">08</div>
+                                    <span class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Secs</span>
+                                </div>
+                            </div>
+
+                            <!-- Live Progress Bar representation -->
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono px-1">
+                                    <span>ELAPSED: 68%</span>
+                                    <span>36d Rem.</span>
+                                </div>
+                                <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden p-[1px]">
+                                    <div class="bg-gradient-to-r from-neon-purple to-neon-cyan h-full rounded-full" style="width: 68%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-time Modifier Form Widgets inside the Hero Frame -->
+                        <div class="bg-space-950/90 rounded-2xl p-4 space-y-3 border border-slate-800">
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Quick Custom Theme Accent</label>
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="setHeroAccent('purple')" class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 ring-offset-2 ring-offset-space-950"></button>
+                                    <button onclick="setHeroAccent('cyan')" class="w-6 h-6 rounded-full bg-cyan-500 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-cyan-500 ring-offset-2 ring-offset-space-950"></button>
+                                    <button onclick="setHeroAccent('orange')" class="w-6 h-6 rounded-full bg-orange-500 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-orange-500 ring-offset-2 ring-offset-space-950"></button>
+                                    <button onclick="setHeroAccent('lime')" class="w-6 h-6 rounded-full bg-lime-500 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-lime-500 ring-offset-2 ring-offset-space-950"></button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Modify Title</label>
+                                    <input type="text" id="widget-input-title" value="Launch V2 Release" oninput="updateHeroWidgetTitle()" 
+                                           class="w-full text-xs bg-slate-900 border border-slate-800 rounded-lg p-2 text-white focus:outline-none focus:border-neon-cyan" />
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Shift Deadline</label>
+                                    <select id="widget-input-date" onchange="adjustHeroTarget()" class="w-full text-xs bg-slate-900 border border-slate-800 rounded-lg p-2 text-white focus:outline-none focus:border-neon-cyan">
+                                        <option value="2">In 2 Days</option>
+                                        <option value="7" selected>In 7 Days</option>
+                                        <option value="30">In 30 Days</option>
+                                        <option value="90">In 90 Days</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Grid Section -->
+            <div id="features-section" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white">
+                        Designed for Every <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-orange">Milestone.</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg">One unified engine to build hype, track sprint critical milestones, or trigger global webhooks on zero-hour.</p>
+                </div>
+
+                <!-- Bento Container -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Bento Box 1: Team & Project Milestones (inspired by calendar visual inside image_0755e7.png) -->
+                    <div class="md:col-span-8 bg-slate-900/40 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between overflow-hidden relative group hover:border-slate-700 transition-all">
+                        <div class="absolute -bottom-16 -right-16 w-48 h-48 bg-gradient-to-tr from-cyan-600/15 to-transparent rounded-full filter blur-xl"></div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-neon-cyan uppercase tracking-wider"><i class="fa-solid fa-users-gear mr-1"></i> Corporate & Sprints</span>
+                            <h3 class="text-2xl font-bold text-white">Sleek Team Milestone Dashboards</h3>
+                            <p class="text-slate-400 text-sm max-w-lg">Track multi-stage product releases, active sprint deadlines, and daily targets synchronized instantly across your organization's TV screens, Notion workspaces, and Slack channels.</p>
+                        </div>
+                        <div class="mt-8 overflow-hidden rounded-2xl bg-space-950/90 border border-slate-800 p-4">
+                            <!-- Mini interactive sprint status bar -->
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold text-slate-300 font-mono">SPRINT CYCLE #48</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 rounded-full">Ends Friday</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-slate-900/60 p-3 rounded-xl text-center">
+                                    <div class="text-xs text-slate-400">Total Tasks</div>
+                                    <div class="text-lg font-bold text-white font-mono">148</div>
+                                </div>
+                                <div class="bg-slate-900/60 p-3 rounded-xl text-center border-l-2 border-neon-cyan">
+                                    <div class="text-xs text-slate-400">Completed</div>
+                                    <div class="text-lg font-bold text-neon-cyan font-mono">112</div>
+                                </div>
+                                <div class="bg-slate-900/60 p-3 rounded-xl text-center border-l-2 border-neon-purple">
+                                    <div class="text-xs text-slate-400">Remaining Time</div>
+                                    <div class="text-sm font-bold text-neon-purple font-mono-tabular" id="bento-sprint-timer">02d:11h:04m</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 2: Creators & Drop Events (inspired by glass hand elements in image_07556c.jpg) -->
+                    <div class="md:col-span-4 bg-slate-900/40 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:border-slate-700 transition-all">
+                        <div class="absolute -top-16 -right-16 w-40 h-40 bg-purple-600/10 rounded-full filter blur-xl"></div>
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold text-neon-purple uppercase tracking-wider"><i class="fa-solid fa-fire mr-1"></i> Creators & Influencers</span>
+                            <h3 class="text-2xl font-bold text-white">Generate High Hype</h3>
+                            <p class="text-slate-400 text-sm">Perfect for limited NFT drops, merchandise countdowns, course releases, or webinars. Provide your fans beautiful interactive clocks.</p>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-slate-800/60 space-y-2">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center"><i class="fa-brands fa-youtube text-red-500"></i></div>
+                                <div class="text-xs">
+                                    <span class="block text-white font-semibold">1.4M views generated</span>
+                                    <span class="block text-[10px] text-slate-400">Webinar Launch Countdown</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 3: Smart Triggers & Slack Integration -->
+                    <div class="md:col-span-4 bg-slate-900/40 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:border-slate-700 transition-all">
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold text-neon-orange uppercase tracking-wider"><i class="fa-solid fa-bell mr-1"></i> Smart Triggers</span>
+                            <h3 class="text-2xl font-bold text-white">Zero-Hour Action</h3>
+                            <p class="text-slate-400 text-sm">Automate downstream workflows using our integration triggers. Send emails, Slack alerts, or ping webhooks when countdown thresholds are met.</p>
+                        </div>
+                        <div class="mt-6 bg-slate-950/80 border border-slate-800/80 rounded-xl p-3.5 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400">
+                                <span>Slack Webhook Status</span>
+                                <span class="text-green-400 flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-green-400 mr-1 animate-pulse"></span> Connected</span>
+                            </div>
+                            <p class="text-xs text-slate-300 font-mono bg-space-900 p-1.5 rounded border border-white/5">
+                                [00:00:00] Sending channel payload: "We are LIVE! 🚀"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 4: Notion & Web Embedding System -->
+                    <div class="md:col-span-8 bg-slate-900/40 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:border-slate-700 transition-all">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent to-cyan-500/5 pointer-events-none"></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                            <div class="space-y-4">
+                                <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider"><i class="fa-solid fa-code mr-1"></i> Flawless Embeds</span>
+                                <h3 class="text-2xl font-bold text-white">Embed Anywhere</h3>
+                                <p class="text-slate-400 text-sm">Our responsive templates fit elegantly in massive TV monitors, tablet dashboards, custom websites, or as minimal widget cards in Notion.</p>
+                                <div class="flex flex-wrap gap-2 pt-2">
+                                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded-md">Notion Docs</span>
+                                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded-md">React Apps</span>
+                                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded-md">WordPress</span>
+                                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded-md">Apple Widgets</span>
+                                </div>
+                            </div>
+                            <!-- Mock embedding graphic inside box -->
+                            <div class="bg-space-950/90 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-2xl">
+                                <div class="flex items-center space-x-2 text-[10px] text-slate-500">
+                                    <span class="w-2 h-2 rounded-full bg-neon-cyan"></span>
+                                    <span>Notion / Web Code Block</span>
+                                </div>
+                                <div class="text-[11px] font-mono text-cyan-400 bg-slate-900 p-2.5 rounded-lg border border-white/5 overflow-x-auto whitespace-pre">
+&lt;iframe src="https://chronosflow.co/embed/v2-launch" 
+  width="100%" height="200" frameborder="0"&gt;
+&lt;/iframe&gt;</div>
+                                <button onclick="copySnippetText(this)" class="w-full text-xs py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 transition-colors font-medium">
+                                    <i class="fa-regular fa-copy mr-1.5"></i> Copy Embed Snippet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deep Dive Integrations Section -->
+            <div id="integrations-section" class="py-16 bg-space-950/40 border-t border-b border-slate-900">
+                <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-12">
+                    <div class="max-w-2xl mx-auto space-y-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-neon-cyan">THE CONNECTED FLOW</span>
+                        <h2 class="text-3xl font-bold text-white">Connects with Your Tools</h2>
+                        <p class="text-slate-400 text-sm">Automatically synchronize deadlines to external platform ecosystems in real time without continuous maintenance.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-6 max-w-5xl mx-auto">
+                        <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 hover:border-slate-700 transition-colors">
+                            <i class="fa-brands fa-slack text-3xl text-purple-400"></i>
+                            <span class="text-xs text-white font-semibold">Slack alerts</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 hover:border-slate-700 transition-colors">
+                            <i class="fa-brands fa-google text-3xl text-red-400"></i>
+                            <span class="text-xs text-white font-semibold">Google Cal</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 hover:border-slate-700 transition-colors">
+                            <i class="fa-brands fa-wordpress text-3xl text-blue-400"></i>
+                            <span class="text-xs text-white font-semibold">WordPress</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 hover:border-slate-700 transition-colors">
+                            <i class="fa-solid fa-cloud text-3xl text-emerald-400"></i>
+                            <span class="text-xs text-white font-semibold">Webhooks</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 hover:border-slate-700 transition-colors">
+                            <i class="fa-brands fa-apple text-3xl text-slate-300"></i>
+                            <span class="text-xs text-white font-semibold">Apple Widgets</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 hover:border-slate-700 transition-colors">
+                            <i class="fa-brands fa-github text-3xl text-indigo-400"></i>
+                            <span class="text-xs text-white font-semibold">GitHub Actions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Section (Conversion Tiers) -->
+            <div id="pricing-section" class="py-24 px-4 sm:px-8 max-w-7xl mx-auto space-y-16">
+                <div class="text-center max-w-2xl mx-auto space-y-4">
+                    <span class="text-xs font-bold text-neon-orange uppercase tracking-wider">Simple & Transparent Pricing</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white">The Cost of Timeliness</h2>
+                    <p class="text-slate-400 text-md">Begin managing milestones absolutely free, and unlock premium scale features as your organization grows.</p>
+
+                    <!-- Toggle Monthly/Yearly -->
+                    <div class="inline-flex items-center space-x-3 bg-slate-900 p-1 rounded-full border border-slate-800">
+                        <button id="pricing-monthly-btn" onclick="togglePricingPeriod('monthly')" class="px-4 py-1.5 rounded-full text-xs font-bold bg-purple-600 text-white transition-all">Monthly</button>
+                        <button id="pricing-yearly-btn" onclick="togglePricingPeriod('yearly')" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-400 hover:text-white transition-all">Yearly (-20%)</button>
+                    </div>
+                </div>
+
+                <!-- Pricing Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Standard Tier -->
+                    <div class="bg-slate-900/40 border border-slate-800 rounded-3xl p-8 space-y-8 flex flex-col justify-between relative">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Starter</h3>
+                                <p class="text-xs text-slate-400 mt-1">Excellent for everyday planners or students.</p>
+                            </div>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-extrabold text-white font-mono">$0</span>
+                                <span class="text-slate-500 text-xs ml-1">/ forever</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-slate-300">
+                                <li><i class="fa-solid fa-check text-neon-cyan mr-2"></i> Up to 3 active countdowns</li>
+                                <li><i class="fa-solid fa-check text-neon-cyan mr-2"></i> Clean Web Sharing View</li>
+                                <li><i class="fa-solid fa-check text-neon-cyan mr-2"></i> Standard template selection</li>
+                                <li class="text-slate-500"><i class="fa-solid fa-xmark mr-2.5"></i> Custom CSS / styling</li>
+                                <li class="text-slate-500"><i class="fa-solid fa-xmark mr-2.5"></i> Advanced alerts triggers</li>
+                            </ul>
+                        </div>
+                        <button onclick="switchTab('dashboard')" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-white font-bold transition-all">
+                            Get Started Free
+                        </button>
+                    </div>
+
+                    <!-- PRO Tier -->
+                    <div class="bg-slate-900/60 border-2 border-neon-purple rounded-3xl p-8 space-y-8 flex flex-col justify-between relative shadow-lg shadow-purple-500/10">
+                        <span class="absolute top-0 right-8 -translate-y-1/2 bg-neon-purple text-slate-950 font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Professional Pro</h3>
+                                <p class="text-xs text-purple-300 mt-1">Essential for startups, creators, and PMs.</p>
+                            </div>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-extrabold text-white font-mono" id="price-pro-value">$19</span>
+                                <span class="text-slate-500 text-xs ml-1" id="price-pro-period">/ month</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-slate-300">
+                                <li><i class="fa-solid fa-check text-neon-purple mr-2"></i> Unlimited active countdowns</li>
+                                <li><i class="fa-solid fa-check text-neon-purple mr-2"></i> Custom logos, brand assets & CSS</li>
+                                <li><i class="fa-solid fa-check text-neon-purple mr-2"></i> Notion embeds & API access</li>
+                                <li><i class="fa-solid fa-check text-neon-purple mr-2"></i> High precision network synchronization</li>
+                                <li><i class="fa-solid fa-check text-neon-purple mr-2"></i> Slack + Webhook trigger notifications</li>
+                            </ul>
+                        </div>
+                        <!-- Mock Interactive Subscription Button -->
+                        <button onclick="triggerMockCheckout('PRO')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-neon-purple to-indigo-600 hover:opacity-90 text-xs text-white font-bold transition-all shadow-lg shadow-purple-500/20">
+                            Upgrade to Pro
+                        </button>
+                    </div>
+
+                    <!-- Enterprise/Team Tier -->
+                    <div class="bg-slate-900/40 border border-slate-800 rounded-3xl p-8 space-y-8 flex flex-col justify-between relative">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Enterprise / Teams</h3>
+                                <p class="text-xs text-slate-400 mt-1">Ideal for large scale events, agencies, and firms.</p>
+                            </div>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-extrabold text-white font-mono" id="price-ent-value">$49</span>
+                                <span class="text-slate-500 text-xs ml-1" id="price-ent-period">/ month</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-slate-300">
+                                <li><i class="fa-solid fa-check text-neon-orange mr-2"></i> Shared workspaces for 10+ users</li>
+                                <li><i class="fa-solid fa-check text-neon-orange mr-2"></i> Detailed analytics of public views</li>
+                                <li><i class="fa-solid fa-check text-neon-orange mr-2"></i> Priority support & SLA guarantees</li>
+                                <li><i class="fa-solid fa-check text-neon-orange mr-2"></i> Dedicated webhook execution environments</li>
+                                <li><i class="fa-solid fa-check text-neon-orange mr-2"></i> Custom domain mappings</li>
+                            </ul>
+                        </div>
+                        <button onclick="triggerMockCheckout('Enterprise')" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-white font-bold transition-all">
+                            Talk to Enterprise Sales
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="max-w-4xl mx-auto space-y-6 pt-12">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white">Frequently Asked Questions</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5">
+                            <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between font-semibold text-white text-sm sm:text-base text-left focus:outline-none">
+                                <span>Can I embed these countdowns in my Notion workspaces?</span>
+                                <i id="faq-icon-1" class="fa-solid fa-chevron-down transition-transform"></i>
+                            </button>
+                            <div id="faq-answer-1" class="hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Absolutely! Our premium countdowns provide tailored Notion link outputs that integrate natively inside an inline block or full page Notion view, adjusting to both light and dark mode automatically.
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5">
+                            <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between font-semibold text-white text-sm sm:text-base text-left focus:outline-none">
+                                <span>How precise is the timer synchronization?</span>
+                                <i id="faq-icon-2" class="fa-solid fa-chevron-down transition-transform"></i>
+                            </button>
+                            <div id="faq-answer-2" class="hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Extremely precise. Unlike simple frontend clocks that can suffer from browser lag, our engine checks system time differences and synchronizes with network NTP servers, guaranteeing accuracy across high-volume TV broadcasts or synchronized drop drops.
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5">
+                            <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between font-semibold text-white text-sm sm:text-base text-left focus:outline-none">
+                                <span>Can I customize the alerts sent via Slack?</span>
+                                <i id="faq-icon-3" class="fa-solid fa-chevron-down transition-transform"></i>
+                            </button>
+                            <div id="faq-answer-3" class="hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                Yes. On the Pro Tier, you can write customized notifications payload formats for various time intervals (e.g. 1 hour remaining, 10 minutes remaining, and zero-hour). These map instantly as webhooks.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky CTA / Bottom Section -->
+            <div class="bg-gradient-to-t from-slate-950 to-transparent py-20 px-4 sm:px-8 text-center relative overflow-hidden">
+                <div class="max-w-4xl mx-auto space-y-8 relative">
+                    <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white">Never let a countdown pass unhyped.</h2>
+                    <p class="text-slate-400 text-lg max-w-xl mx-auto">Create beautiful real-time timers in minutes. Free forever tier is available, no credit card required.</p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <button onclick="switchTab('dashboard')" class="px-8 py-4 rounded-xl bg-neon-cyan hover:opacity-90 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-cyan-500/25">
+                            Launch Your Dashboard Free
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+        <!-- ==================== PAGE 2: USER DASHBOARD (WORKSPACE CONTROL CENTER) ==================== -->
+        <section id="page-dashboard" class="page-transition hidden max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8">
+            <!-- Header section of Workspace, workspace switcher inspired by image_0755e7.png -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-900/40 p-6 rounded-2xl border border-slate-800">
+                <div class="flex items-center space-x-4">
+                    <!-- Workspace Select Picker -->
+                    <div class="bg-space-950 border border-slate-800 rounded-xl p-2.5 flex items-center space-x-3 cursor-pointer">
+                        <div class="w-8 h-8 rounded-lg bg-neon-cyan text-slate-950 flex items-center justify-center font-bold text-xs">CF</div>
+                        <div>
+                            <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider leading-none">Workspace</span>
+                            <div class="flex items-center space-x-1">
+                                <span id="current-workspace-name" class="text-xs text-white font-bold">Personal Workspace</span>
+                                <i class="fa-solid fa-caret-down text-slate-400 text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-neon-cyan px-2.5 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+                            <span id="user-tier-badge">FREE TIER</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Profile avatar indicators (as in image_0755e7.png) -->
+                    <div class="flex -space-x-2 mr-2">
+                        <img class="w-8 h-8 rounded-full border border-space-950" src="https://placehold.co/80x80/a855f7/ffffff?text=U1" alt="User 1" />
+                        <img class="w-8 h-8 rounded-full border border-space-950" src="https://placehold.co/80x80/06b6d4/ffffff?text=U2" alt="User 2" />
+                        <span class="w-8 h-8 rounded-full bg-slate-800 border border-space-950 flex items-center justify-center text-[10px] font-bold text-white">+3</span>
+                    </div>
+                    <button onclick="toggleAddTimerModal(true)" class="bg-neon-cyan hover:opacity-90 text-slate-950 font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-cyan-500/10">
+                        <i class="fa-solid fa-plus mr-1"></i> New Countdown
+                    </button>
+                </div>
+            </div>
+
+            <!-- Workspace Subnavigation and Workspace Metrics stats -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Sidebar Tools Container -->
+                <div class="md:col-span-1 space-y-4">
+                    <div class="bg-slate-900/40 rounded-2xl p-4 border border-slate-800 space-y-1">
+                        <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 mb-2">Navigator</span>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 bg-slate-800 text-white rounded-xl text-xs font-semibold">
+                            <i class="fa-solid fa-list-check text-neon-cyan"></i> <span>All Countdowns</span>
+                        </a>
+                        <a href="#" onclick="alert('Integration webhooks are only editable on Pro level subscriptions. Try toggling Pro pricing tier above to unlock.')" class="flex items-center space-x-3 px-3 py-2 text-slate-400 hover:text-white rounded-xl text-xs transition-colors">
+                            <i class="fa-solid fa-link"></i> <span>Connected Triggers</span>
+                        </a>
+                        <a href="#" onclick="alert('Access logs showing visual countdown embedding analytics require Enterprise tier.')" class="flex items-center space-x-3 px-3 py-2 text-slate-400 hover:text-white rounded-xl text-xs transition-colors">
+                            <i class="fa-solid fa-chart-line"></i> <span>Hype Analytics</span>
+                        </a>
+                    </div>
+
+                    <!-- Small system notice info card -->
+                    <div class="bg-gradient-to-tr from-purple-900/20 to-cyan-900/10 rounded-2xl p-4 border border-purple-500/10 space-y-3">
+                        <span class="block text-xs font-bold text-purple-300">Need Custom CSS?</span>
+                        <p class="text-[11px] text-slate-400 leading-relaxed">Upgrade to Professional to unlock high customization styling variables including custom fonts, image templates, and synchronized webhooks.</p>
+                        <button onclick="triggerMockCheckout('PRO')" class="text-[10px] font-bold text-neon-cyan hover:underline">Learn More Pro Tiers &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Active Countdowns Grid Control Center -->
+                <div class="md:col-span-3 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <i class="fa-solid fa-stopwatch text-neon-cyan mr-2"></i> Active Timers
+                        </h2>
+                        <span class="text-xs text-slate-400">Sorted by urgency (closest deadline first)</span>
+                    </div>
+
+                    <!-- Grid of real-time running timers -->
+                    <div id="timers-workspace-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Dynamic items will be generated here by system script -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE 3: SHARED LIVE DISPLAY COUNTDOWN (THE DISPLAY SCREEN) ==================== -->
+        <section id="page-live-display" class="page-transition hidden min-h-[85vh] flex flex-col justify-between p-4 sm:p-8">
+            <!-- Dynamic dynamic backplate -->
+            <div class="max-w-6xl mx-auto w-full flex-grow flex flex-col justify-between py-12 space-y-8">
                 
+                <!-- Ultra-Minimal Header -->
+                <div class="flex items-center justify-between pb-6 border-b border-white/5">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 rounded-lg bg-neon-cyan text-slate-950 flex items-center justify-center font-bold text-[10px]">CF</div>
+                        <span class="text-xs text-slate-400 font-semibold tracking-wider uppercase">Powered by ChronosFlow</span>
+                    </div>
+                    <button onclick="exitLiveDisplay()" class="text-xs bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg transition-colors">
+                        <i class="fa-solid fa-arrow-left-long mr-1"></i> Exit Display Mode
+                    </button>
+                </div>
+
+                <!-- The Main Stage Countdown -->
+                <div class="text-center space-y-12 py-12">
+                    <div class="space-y-4">
+                        <span id="live-stage-badge" class="px-3 py-1 bg-neon-cyan/15 border border-neon-cyan/20 text-xs text-neon-cyan font-bold tracking-widest uppercase rounded-full">
+                            COUNTDOWN RUNNING
+                        </span>
+                        <h1 id="live-stage-title" class="font-display font-extrabold text-4xl sm:text-7xl text-white tracking-tight leading-none text-glow-cyan">
+                            Global Summit & Launch Event
+                        </h1>
+                        <p id="live-stage-description" class="text-slate-400 text-base sm:text-xl max-w-xl mx-auto font-light leading-relaxed">
+                            Be there on the final hour as we release our core architecture to the public domain.
+                        </p>
+                    </div>
+
+                    <!-- Massive Ticking clock with glass backdrop inspired by image_0751e8.jpg style of big digit block glows -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto px-2">
+                        <!-- Days Block -->
+                        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative">
+                            <div class="absolute inset-0 bg-cyan-500/5 filter blur-2xl rounded-full"></div>
+                            <div id="live-days" class="text-5xl sm:text-7xl font-bold font-mono-tabular text-white tracking-wider">00</div>
+                            <span class="text-xs uppercase tracking-widest text-slate-500 font-bold block mt-2">Days</span>
+                        </div>
+                        <!-- Hours Block -->
+                        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative">
+                            <div class="absolute inset-0 bg-purple-500/5 filter blur-2xl rounded-full"></div>
+                            <div id="live-hours" class="text-5xl sm:text-7xl font-bold font-mono-tabular text-white tracking-wider">00</div>
+                            <span class="text-xs uppercase tracking-widest text-slate-500 font-bold block mt-2">Hours</span>
+                        </div>
+                        <!-- Mins Block -->
+                        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative">
+                            <div class="absolute inset-0 bg-orange-500/5 filter blur-2xl rounded-full"></div>
+                            <div id="live-mins" class="text-5xl sm:text-7xl font-bold font-mono-tabular text-white tracking-wider">00</div>
+                            <span class="text-xs uppercase tracking-widest text-slate-500 font-bold block mt-2">Mins</span>
+                        </div>
+                        <!-- Secs Block -->
+                        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative">
+                            <div class="absolute inset-0 bg-emerald-500/5 filter blur-2xl rounded-full"></div>
+                            <div id="live-secs" class="text-5xl sm:text-7xl font-bold font-mono-tabular text-neon-cyan text-glow-cyan tracking-wider">00</div>
+                            <span class="text-xs uppercase tracking-widest text-slate-500 font-bold block mt-2">Secs</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress bar remaining tracking -->
+                    <div class="max-w-xl mx-auto space-y-2 px-4">
+                        <div class="flex justify-between items-center text-xs text-slate-400 font-mono">
+                            <span id="live-percentage-readout">ELAPSED: 45%</span>
+                            <span id="live-remaining-days-readout">24 days remaining</span>
+                        </div>
+                        <div class="w-full bg-slate-900/80 rounded-full h-3 p-[2px] border border-white/5">
+                            <div id="live-progress-indicator-bar" class="bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-lime h-full rounded-full transition-all duration-1000" style="width: 45%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interaction / Bottom alert box -->
+                <div class="glass-panel rounded-3xl p-6 border border-slate-800 text-center max-w-xl mx-auto space-y-4 shadow-xl">
+                    <span class="text-xs text-slate-300 font-bold uppercase tracking-wider block">Get notified on the zero hour launch</span>
+                    <form id="live-subscribe-form" onsubmit="handleLiveSubscription(event)" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                        <input id="live-subscribe-email" type="email" placeholder="Enter your email address" required 
+                               class="bg-space-950/90 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-neon-cyan flex-grow" />
+                        <button type="submit" class="bg-neon-cyan hover:opacity-90 text-slate-950 text-xs font-bold px-5 py-3 rounded-xl transition-all shadow-lg shadow-cyan-500/10">
+                            Remind Me <i class="fa-solid fa-bell ml-1"></i>
+                        </button>
+                    </form>
+                    <p id="live-subscribe-success" class="text-xs text-neon-lime hidden"><i class="fa-regular fa-circle-check"></i> Subscribed! We'll alert you 1 hour before launching.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ==================== GLOBAL INTERACTIVE MODALS ==================== -->
+    <!-- MODAL 1: ADD COUNTDOWN TIMER (Workspace) -->
+    <div id="modal-add-timer" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel-neon rounded-3xl w-full max-w-xl overflow-hidden relative shadow-2xl">
+            <!-- Modal Head -->
+            <div class="p-6 border-b border-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-regular fa-calendar-plus text-neon-purple text-xl"></i>
+                    <span class="font-bold text-white tracking-wider uppercase text-sm">Configure Countdown</span>
+                </div>
+                <button onclick="toggleAddTimerModal(false)" class="text-slate-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-times text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Form -->
+            <form onsubmit="handleCreateTimerSubmit(event)" class="p-6 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Event Title *</label>
+                        <input id="modal-input-title" type="text" placeholder="E.g., Crypto Token Launch Drop" required 
+                               class="w-full bg-space-950 border border-slate-800 rounded-xl py-3 px-4 text-xs sm:text-sm text-white focus:outline-none focus:border-neon-cyan transition-all" />
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Event Description / Message</label>
+                        <textarea id="modal-input-desc" placeholder="Brief explanation of your deadline..." rows="2" 
+                                  class="w-full bg-space-950 border border-slate-800 rounded-xl py-3 px-4 text-xs sm:text-sm text-white focus:outline-none focus:border-neon-cyan transition-all"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Target Date *</label>
+                        <input id="modal-input-date" type="date" required 
+                               class="w-full bg-space-950 border border-slate-800 rounded-xl py-3 px-4 text-xs text-white focus:outline-none focus:border-neon-cyan transition-all" />
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Target Time *</label>
+                        <input id="modal-input-time" type="time" required 
+                               class="w-full bg-space-950 border border-slate-800 rounded-xl py-3 px-4 text-xs text-white focus:outline-none focus:border-neon-cyan transition-all" />
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Background Theme Accent</label>
+                        <select id="modal-input-accent" class="w-full bg-space-950 border border-slate-800 rounded-xl py-3 px-4 text-xs text-white focus:outline-none focus:border-neon-cyan transition-all">
+                            <option value="cyan">Electric Cyan Glow</option>
+                            <option value="purple">Neon Violet Surge</option>
+                            <option value="orange">Sunset Orange Blaze</option>
+                            <option value="lime">Lime Energy Pulse</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Triggers (Webhook alerts)</label>
+                        <select id="modal-input-alert" class="w-full bg-space-950 border border-slate-800 rounded-xl py-3 px-4 text-xs text-white focus:outline-none focus:border-neon-cyan transition-all">
+                            <option value="slack">Slack Channel Ping on Live</option>
+                            <option value="webhook">General Webhook Call on End</option>
+                            <option value="none">Local Only (No Network Alerts)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-white/5 flex justify-end space-x-3">
+                    <button type="button" onclick="toggleAddTimerModal(false)" class="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-xs font-bold text-slate-400 hover:text-white transition-all">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-6 py-3 rounded-xl bg-neon-cyan hover:opacity-95 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-cyan-500/15">
+                        <i class="fa-solid fa-save mr-1"></i> Save Countdown
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- MODAL 2: MOCK BILLING PORTAL -->
+    <div id="modal-mock-checkout" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel rounded-3xl w-full max-w-md overflow-hidden relative shadow-2xl border-2 border-neon-cyan">
+            <div class="p-6 border-b border-white/5 flex items-center justify-between bg-gradient-to-r from-cyan-950/40 to-transparent">
+                <span class="font-bold text-white tracking-wider uppercase text-sm">ChronosFlow Secure Checkout</span>
+                <button onclick="toggleCheckoutModal(false)" class="text-slate-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-times text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-6">
+                <!-- Selected Plan Display -->
+                <div class="bg-space-950/90 rounded-2xl p-4 border border-slate-800 flex justify-between items-center">
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-bold">Selected Plan</span>
+                        <span id="checkout-plan-name" class="text-sm font-bold text-white">Professional Pro</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-bold">Price</span>
+                        <span id="checkout-plan-price" class="text-sm font-bold text-neon-cyan">$19 / month</span>
+                    </div>
+                </div>
+
+                <!-- Fake Credit Card Form Fields -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Mock Card Number</label>
+                        <div class="relative">
+                            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"><i class="fa-solid fa-credit-card"></i></span>
+                            <input type="text" value="4242 •••• •••• 4242" disabled 
+                                   class="w-full bg-space-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-400 focus:outline-none" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">Expiry Date</label>
+                            <input type="text" value="12 / 29" disabled class="w-full bg-space-950 border border-slate-800 rounded-xl py-2.5 px-4 text-xs text-slate-400 focus:outline-none" />
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">CVV Security Code</label>
+                            <input type="text" value="•••" disabled class="w-full bg-space-950 border border-slate-800 rounded-xl py-2.5 px-4 text-xs text-slate-400 focus:outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disclaimer info -->
+                <div class="flex items-start space-x-2 text-[10px] text-slate-500 leading-relaxed bg-slate-900/40 p-3 rounded-lg">
+                    <i class="fa-solid fa-info-circle text-neon-cyan mt-0.5"></i>
+                    <span>This checkout is a demo workflow sandbox. Completing this simulation instantly flags your current sandbox session as a premium level workspace to unlock customizable options!</span>
+                </div>
+
+                <!-- Actions -->
+                <button onclick="confirmUpgradePlan()" class="w-full py-4 rounded-xl bg-gradient-to-r from-neon-cyan to-indigo-600 hover:opacity-90 text-xs sm:text-sm font-bold text-slate-950 tracking-wider transition-all shadow-lg shadow-cyan-500/25">
+                    Process Sandbox Payment & Upgrade &rarr;
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- GLOBAL STATIC FOOTER -->
+    <footer id="global-site-footer" class="w-full glass-panel border-t border-white/5 py-12 px-4 sm:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-neon-cyan text-slate-950 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <span class="font-display font-bold text-lg text-white">ChronosFlow</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">The high-fidelity dynamic countdown widget platform to organize time systems, launch drops, and sync sprint schedules.</p>
+                <div class="flex space-x-4 text-slate-400">
+                    <a href="#" class="hover:text-neon-cyan transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-neon-cyan transition-colors"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-neon-cyan transition-colors"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Product Ecosystem</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><a href="#features-section" class="hover:text-white transition-colors">Visual Customizations</a></li>
+                    <li><a href="#integrations-section" class="hover:text-white transition-colors">Triggers & Webhooks</a></li>
+                    <li><a href="#" onclick="switchTab('dashboard')" class="hover:text-white transition-colors">Interactive Workspaces</a></li>
+                    <li><a href="#pricing-section" class="hover:text-white transition-colors">Platform Pricing plans</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Integrations</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Notion Docs Embedded</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Slack Notification payload</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">WordPress API plug</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">GitHub Actions trigger</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Sandbox Info</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">This application represents an interactive demonstration mockup environment for ChronosFlow. Built with custom state management and responsive live synchronization.</p>
+                <p class="text-xs text-slate-500 pt-3">© 2026 ChronosFlow Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==================== JAVASCRIPT APPLICATION CORE ENGINE ==================== -->
+    <script>
+        
+        // Active Subscribed User Tier state
+        let currentTier = "FREE TIER";
+        let isBillingPeriodMonthly = true;
+        let activeTab = "marketing"; // Tab states: "marketing", "dashboard", "live-display"
+        
+        // Live-Display Event reference
+        let activeLiveDisplayTimerId = null;
+
+        // Custom countdown datasets
+        let countdownsData = [
+            {
+                id: "sprint-48",
+                title: "Q3 Sprint Launch Cycle",
+                description: "Critical engineering sprint deadline for deploying decentralized NTP clock syncing architecture.",
+                targetDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3).toISOString().split('T')[0], // 3 days in future
+                targetTime: "17:00",
+                createdDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 4).toISOString(), // 4 days in past
+                accent: "cyan",
+                alertType: "slack",
+                totalMinutesSpan: 10080 // 7 days total range representation
+            },
+            {
+                id: "creator-drop",
+                title: "Creator NFT Hype Release",
+                description: "Limited custom artwork digital merchandise drops tracking live on premium partner channels.",
+                targetDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7).toISOString().split('T')[0], // 7 days in future
+                targetTime: "12:00",
+                createdDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3).toISOString(), // 3 days in past
+                accent: "purple",
+                alertType: "webhook",
+                totalMinutesSpan: 14400 // 10 days
+            },
+            {
+                id: "global-summit",
+                title: "ChronosFlow V2 Architecture Release",
+                description: "Be there on the final hour as we release our core real-time ticking architecture to the public domain.",
+                targetDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 24).toISOString().split('T')[0], // 24 days in future
+                targetTime: "09:00",
+                createdDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 10).toISOString(), // 10 days in past
+                accent: "orange",
+                alertType: "none",
+                totalMinutesSpan: 48960 // 34 days
+            }
+        ];
+
+        window.onload = function() {
+            // Kick off regular ticks
+            startTickerLoop();
+            
+            // Render baseline items
+            renderTimersInWorkspace();
+
+            // Set up Hero widget deadline shift on load
+            adjustHeroTarget();
+        }
+
+        function switchTab(tabId) {
+            activeTab = tabId;
+            
+            // Retrieve page elements
+            const pageMarketing = document.getElementById("page-marketing");
+            const pageDashboard = document.getElementById("page-dashboard");
+            const pageLiveDisplay = document.getElementById("page-live-display");
+            
+            const btnWorkspace = document.getElementById("btn-workspace");
+            const btnViewMkt = document.getElementById("btn-view-mkt");
+            const footer = document.getElementById("global-site-footer");
+            const marketingNav = document.getElementById("marketing-nav-links");
+
+            // Hide/Show correct panels with smooth fade transitions
+            if (tabId === "marketing") {
+                pageMarketing.classList.remove("hidden");
+                pageDashboard.classList.add("hidden");
+                pageLiveDisplay.classList.add("hidden");
+
+                btnWorkspace.classList.remove("hidden");
+                btnViewMkt.classList.add("hidden");
+                footer.classList.remove("hidden");
+                marketingNav.classList.remove("hidden");
+            } 
+            else if (tabId === "dashboard") {
+                pageMarketing.classList.add("hidden");
+                pageDashboard.classList.remove("hidden");
+                pageLiveDisplay.classList.add("hidden");
+
+                btnWorkspace.classList.add("hidden");
+                btnViewMkt.classList.remove("hidden");
+                footer.classList.remove("hidden");
+                marketingNav.classList.add("hidden");
+                
+                // Redraw workspace widgets
+                renderTimersInWorkspace();
+            } 
+            else if (tabId === "live-display") {
+                pageMarketing.classList.add("hidden");
+                pageDashboard.classList.add("hidden");
+                pageLiveDisplay.classList.remove("hidden");
+
+                btnWorkspace.classList.add("hidden");
+                btnViewMkt.classList.remove("hidden");
+                footer.classList.add("hidden");
+                marketingNav.classList.add("hidden");
+            }
+
+            // Scroll window smooth top to maintain UX positioning
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function startTickerLoop() {
+            setInterval(() => {
+                // Tick 1: Hero Live Widget modification calculations
+                tickHeroWidget();
+
+                // Tick 2: All countdown items rendered in Workspace Cards
+                tickWorkspaceCards();
+
+                // Tick 3: Cinematic Big Stage Countdown
+                tickLiveStage();
+
+                // Tick 4: Mini Bento showcase sprint timer
+                tickBentoSprintTimer();
+            }, 1000);
+        }
+
+        let heroTargetDateTime = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7); // Default 7 days
+        let heroAccentColor = 'purple';
+
+        function adjustHeroTarget() {
+            const shiftSelect = document.getElementById("widget-input-date");
+            const daysOffset = parseInt(shiftSelect.value) || 7;
+            heroTargetDateTime = new Date(Date.now() + 1000 * 60 * 60 * 24 * daysOffset);
+            tickHeroWidget();
+        }
+
+        function updateHeroWidgetTitle() {
+            const val = document.getElementById("widget-input-title").value;
+            const targetLabel = document.getElementById("hero-widget-title");
+            targetLabel.textContent = val ? val : "Instant Active Clock";
+        }
+
+        function setHeroAccent(colorName) {
+            heroAccentColor = colorName;
+            
+            // Adjust class colors on target widgets dynamically
+            const elements = [
+                document.getElementById("hero-days"),
+                document.getElementById("hero-hours"),
+                document.getElementById("hero-mins")
+            ];
+            
+            elements.forEach(el => {
+                // Clear old color states
+                el.className = el.className.replace(/text-neon-\w+/g, '');
+                el.className = el.className.replace(/text-glow-\w+/g, '');
+                
+                // Add new color states
+                el.classList.add(`text-neon-${colorName}`);
+                el.classList.add(`text-glow-${colorName}`);
+            });
+
+            // Adjust the dynamic container glowing line border
+            const badge = document.getElementById("hero-widget-badge");
+            badge.className = `px-3 py-1 text-xs font-semibold rounded-full border bg-${colorName}-500/10 border-${colorName}-500/20 text-${colorName}-300`;
+        }
+
+        function tickHeroWidget() {
+            const diff = heroTargetDateTime.getTime() - Date.now();
+            if (diff <= 0) {
+                // Completed State
+                document.getElementById("hero-days").textContent = "00";
+                document.getElementById("hero-hours").textContent = "00";
+                document.getElementById("hero-mins").textContent = "00";
+                document.getElementById("hero-secs").textContent = "00";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            const secs = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("hero-days").textContent = String(days).padStart(2, '0');
+            document.getElementById("hero-hours").textContent = String(hours).padStart(2, '0');
+            document.getElementById("hero-mins").textContent = String(mins).padStart(2, '0');
+            document.getElementById("hero-secs").textContent = String(secs).padStart(2, '0');
+        }
+
+        // Action when user clicks "Create First Timer" on hero input
+        function claimHeroTimer() {
+            const inputField = document.getElementById("hero-quick-title");
+            const newTitle = inputField.value.trim() || "My New Event Title";
+            
+            // Populate Create New Modal with this custom title immediately and show
+            document.getElementById("modal-input-title").value = newTitle;
+            
+            // Auto calculate target date 7 days from now as default value
+            const fut = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
+            document.getElementById("modal-input-date").value = fut.toISOString().split('T')[0];
+            document.getElementById("modal-input-time").value = "12:00";
+            
+            switchTab('dashboard');
+            toggleAddTimerModal(true);
+        }
+
+        function toggleFaq(num) {
+            const panel = document.getElementById(`faq-answer-${num}`);
+            const icon = document.getElementById(`faq-icon-${num}`);
+            if (panel.classList.contains("hidden")) {
+                panel.classList.remove("hidden");
+                icon.classList.add("rotate-180");
+            } else {
+                panel.classList.add("hidden");
+                icon.classList.remove("rotate-180");
+            }
+        }
+
+        function togglePricingPeriod(period) {
+            isBillingPeriodMonthly = (period === 'monthly');
+            const monthlyBtn = document.getElementById("pricing-monthly-btn");
+            const yearlyBtn = document.getElementById("pricing-yearly-btn");
+            
+            const proVal = document.getElementById("price-pro-value");
+            const proPeriod = document.getElementById("price-pro-period");
+            const entVal = document.getElementById("price-ent-value");
+            const entPeriod = document.getElementById("price-ent-period");
+
+            if (isBillingPeriodMonthly) {
+                monthlyBtn.className = "px-4 py-1.5 rounded-full text-xs font-bold bg-purple-600 text-white transition-all";
+                yearlyBtn.className = "px-4 py-1.5 rounded-full text-xs font-bold text-slate-400 hover:text-white transition-all";
+                
+                proVal.textContent = "$19";
+                proPeriod.textContent = "/ month";
+                entVal.textContent = "$49";
+                entPeriod.textContent = "/ month";
+            } else {
+                monthlyBtn.className = "px-4 py-1.5 rounded-full text-xs font-bold text-slate-400 hover:text-white transition-all";
+                yearlyBtn.className = "px-4 py-1.5 rounded-full text-xs font-bold bg-purple-600 text-white transition-all";
+                
+                // Apply 20% discount structure
+                proVal.textContent = "$15";
+                proPeriod.textContent = "/ month, billed yearly";
+                entVal.textContent = "$39";
+                entPeriod.textContent = "/ month, billed yearly";
+            }
+        }
+
+        function triggerMockCheckout(planName) {
+            document.getElementById("checkout-plan-name").textContent = planName + " Subscription";
+            const price = (planName === 'PRO') ? (isBillingPeriodMonthly ? "$19 / mo" : "$15 / mo") : (isBillingPeriodMonthly ? "$49 / mo" : "$39 / mo");
+            document.getElementById("checkout-plan-price").textContent = price;
+            
+            toggleCheckoutModal(true);
+        }
+
+        function toggleCheckoutModal(isOpen) {
+            const modal = document.getElementById("modal-mock-checkout");
+            if (isOpen) {
+                modal.classList.remove("hidden");
+            } else {
+                modal.classList.add("hidden");
+            }
+        }
+
+        function confirmUpgradePlan() {
+            currentTier = "PRO SUBSCRIPTION ACTIVE";
+            
+            // Update Visual Dash indicators
+            document.getElementById("user-tier-badge").textContent = currentTier;
+            document.getElementById("user-tier-badge").className = "text-xs font-bold text-neon-purple px-2.5 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full";
+            
+            toggleCheckoutModal(false);
+            
+            // Show custom visual alert inside the browser console / DOM representation
+            const sandboxAlert = document.createElement("div");
+            sandboxAlert.className = "fixed bottom-5 right-5 bg-gradient-to-r from-neon-purple to-indigo-600 text-white text-xs font-bold p-4 rounded-xl shadow-2xl border border-white/20 z-50 flex items-center space-x-3";
+            sandboxAlert.innerHTML = `<i class="fa-solid fa-circle-check text-base"></i> <span>Success! PRO Sandbox account features are unlocked!</span>`;
+            document.body.appendChild(sandboxAlert);
+            setTimeout(() => { sandboxAlert.remove(); }, 5000);
+        }
+
+        function renderTimersInWorkspace() {
+            const grid = document.getElementById("timers-workspace-grid");
+            grid.innerHTML = "";
+
+            if (countdownsData.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-2 text-center p-12 bg-slate-900/20 rounded-2xl border border-slate-800">
+                        <i class="fa-regular fa-folder-open text-slate-600 text-4xl mb-3 block"></i>
+                        <h4 class="text-white font-bold">No active timers yet</h4>
+                        <p class="text-xs text-slate-500 mt-1 mb-4">Launch a new countdown to begin synchronizing dynamic schedules.</p>
+                        <button onclick="toggleAddTimerModal(true)" class="text-xs font-bold bg-neon-cyan text-slate-950 px-4 py-2 rounded-lg">Create One Now</button>
+                    </div>
+                `;
+                return;
+            }
+
+            // Loop and draw
+            countdownsData.forEach(timer => {
+                const accentBorderColor = timer.accent === 'cyan' ? 'border-neon-cyan/25' : (timer.accent === 'purple' ? 'border-neon-purple/25' : 'border-neon-orange/25');
+                const badgeColor = timer.accent === 'cyan' ? 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20' : (timer.accent === 'purple' ? 'bg-purple-500/10 text-purple-300 border-purple-500/20' : 'bg-orange-500/10 text-orange-300 border-orange-500/20');
+                
+                // Parse date formatting
+                const targetDisplayString = new Date(`${timer.targetDate}T${timer.targetTime}`).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' });
+
+                const cardHtml = `
+                    <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-5 space-y-4 flex flex-col justify-between relative hover:border-slate-700 transition-all" id="card-${timer.id}">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-0.5 text-[9px] font-bold uppercase rounded-full border ${badgeColor}">
+                                    Target: ${targetDisplayString}
+                                </span>
+                                <div class="flex items-center space-x-1.5 text-xs text-slate-500">
+                                    <button onclick="editCountdownPayload('${timer.id}')" title="Edit Countdown" class="hover:text-white p-1 transition-colors"><i class="fa-regular fa-edit"></i></button>
+                                    <button onclick="deleteCountdownPayload('${timer.id}')" title="Delete" class="hover:text-red-400 p-1 transition-colors"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-white tracking-tight">${timer.title}</h3>
+                            <p class="text-xs text-slate-400 line-clamp-2">${timer.description || 'No description message provided for this timer.'}</p>
+                        </div>
+
+                        <!-- Real-time ticking display inside card -->
+                        <div class="grid grid-cols-4 gap-1 py-1 bg-space-950/80 p-2.5 rounded-xl border border-white/5 text-center">
+                            <div>
+                                <div class="text-sm font-bold text-white font-mono-tabular" id="tick-days-${timer.id}">00</div>
+                                <span class="text-[8px] text-slate-500 font-bold uppercase block">Days</span>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white font-mono-tabular" id="tick-hours-${timer.id}">00</div>
+                                <span class="text-[8px] text-slate-500 font-bold uppercase block">Hrs</span>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white font-mono-tabular" id="tick-mins-${timer.id}">00</div>
+                                <span class="text-[8px] text-slate-500 font-bold uppercase block">Mins</span>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-neon-${timer.accent} font-mono-tabular" id="tick-secs-${timer.id}">00</div>
+                                <span class="text-[8px] text-slate-500 font-bold uppercase block">Secs</span>
+                            </div>
+                        </div>
+
+                        <!-- Elapsed calculation bar -->
+                        <div class="space-y-1">
+                            <div class="flex items-center justify-between text-[10px] text-slate-500">
+                                <span id="percent-label-${timer.id}">Elapsed: 0%</span>
+                                <span id="elapsed-time-rem-${timer.id}">Ticking</span>
+                            </div>
+                            <div class="w-full bg-slate-950 h-1.5 rounded-full overflow-hidden p-[1px]">
+                                <div id="bar-${timer.id}" class="bg-gradient-to-r from-neon-purple to-neon-cyan h-full rounded-full transition-all duration-1000" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Action row inside Dashboard Cards -->
+                        <div class="pt-2 border-t border-slate-800/80 grid grid-cols-2 gap-2 text-center text-xs">
+                            <button onclick="launchCountdownCinematicDisplay('${timer.id}')" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-colors">
+                                <i class="fa-solid fa-play text-neon-cyan text-[10px]"></i> Cast Live
+                            </button>
+                            <button onclick="copyEmbedForPayload('${timer.id}', this)" class="bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-300 py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-colors">
+                                <i class="fa-regular fa-copy text-[10px]"></i> Share embed
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                grid.insertAdjacentHTML("beforeend", cardHtml);
+            });
+            
+            // Execute quick tick to avoid flash of empty elements
+            tickWorkspaceCards();
+        }
+
+        function tickWorkspaceCards() {
+            countdownsData.forEach(timer => {
+                const targetStamp = new Date(`${timer.targetDate}T${timer.targetTime}`).getTime();
+                const nowStamp = Date.now();
+                const diff = targetStamp - nowStamp;
+
+                const daysEl = document.getElementById(`tick-days-${timer.id}`);
+                const hoursEl = document.getElementById(`tick-hours-${timer.id}`);
+                const minsEl = document.getElementById(`tick-mins-${timer.id}`);
+                const secsEl = document.getElementById(`tick-secs-${timer.id}`);
+
+                if (!daysEl) return; // Safeguard if element not currently drawn
+
+                if (diff <= 0) {
+                    daysEl.textContent = "00";
+                    hoursEl.textContent = "00";
+                    minsEl.textContent = "00";
+                    secsEl.textContent = "00";
+                    
+                    document.getElementById(`percent-label-${timer.id}`).textContent = "Elapsed: 100%";
+                    document.getElementById(`bar-${timer.id}`).style.width = "100%";
+                    document.getElementById(`elapsed-time-rem-${timer.id}`).textContent = "Event Completed";
+                    return;
+                }
+
+                // Convert remaining time values
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const mins = Math.floor((diff / (1000 * 60)) % 60);
+                const secs = Math.floor((diff / 1000) % 60);
+
+                daysEl.textContent = String(days).padStart(2, '0');
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minsEl.textContent = String(mins).padStart(2, '0');
+                secsEl.textContent = String(secs).padStart(2, '0');
+
+                // Dynamic progress bar elapsed logic
+                const createdStamp = new Date(timer.createdDate).getTime();
+                const totalRange = targetStamp - createdStamp;
+                const elapsedRange = nowStamp - createdStamp;
+                let elapsedPercent = Math.min(Math.round((elapsedRange / totalRange) * 100), 100);
+                if (elapsedPercent < 0) elapsedPercent = 0;
+
+                document.getElementById(`percent-label-${timer.id}`).textContent = `Elapsed: ${elapsedPercent}%`;
+                document.getElementById(`bar-${timer.id}`).style.width = `${elapsedPercent}%`;
+                
+                // Remainder string
+                document.getElementById(`elapsed-time-rem-${timer.id}`).textContent = `${days}d left`;
+            });
+        }
+
+        function tickLiveStage() {
+            if (activeTab !== "live-display" || !activeLiveDisplayTimerId) return;
+
+            const timer = countdownsData.find(t => t.id === activeLiveDisplayTimerId);
+            if (!timer) return;
+
+            const targetStamp = new Date(`${timer.targetDate}T${timer.targetTime}`).getTime();
+            const nowStamp = Date.now();
+            const diff = targetStamp - nowStamp;
+
+            const daysEl = document.getElementById("live-days");
+            const hoursEl = document.getElementById("live-hours");
+            const minsEl = document.getElementById("live-mins");
+            const secsEl = document.getElementById("live-secs");
+
+            if (diff <= 0) {
+                daysEl.textContent = "00";
+                hoursEl.textContent = "00";
+                minsEl.textContent = "00";
+                secsEl.textContent = "00";
+                
+                document.getElementById("live-percentage-readout").textContent = "ELAPSED: 100%";
+                document.getElementById("live-progress-indicator-bar").style.width = "100%";
+                document.getElementById("live-remaining-days-readout").textContent = "EVENT REACHED";
+                document.getElementById("live-stage-badge").textContent = "EVENT REACHED";
+                document.getElementById("live-stage-badge").className = "px-3 py-1 bg-green-500/20 border border-green-500/20 text-xs text-green-400 font-bold tracking-widest uppercase rounded-full";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            const secs = Math.floor((diff / 1000) % 60);
+
+            daysEl.textContent = String(days).padStart(2, '0');
+            hoursEl.textContent = String(hours).padStart(2, '0');
+            minsEl.textContent = String(mins).padStart(2, '0');
+            secsEl.textContent = String(secs).padStart(2, '0');
+
+            // Elapsed bar computations
+            const createdStamp = new Date(timer.createdDate).getTime();
+            const totalRange = targetStamp - createdStamp;
+            const elapsedRange = nowStamp - createdStamp;
+            let elapsedPercent = Math.min(Math.round((elapsedRange / totalRange) * 100), 100);
+            if (elapsedPercent < 0) elapsedPercent = 0;
+
+            document.getElementById("live-percentage-readout").textContent = `ELAPSED: ${elapsedPercent}%`;
+            document.getElementById("live-progress-indicator-bar").style.width = `${elapsedPercent}%`;
+            document.getElementById("live-remaining-days-readout").textContent = `${days} days remaining`;
+        }
+
+        function tickBentoSprintTimer() {
+            const bentoLabel = document.getElementById("bento-sprint-timer");
+            if (!bentoLabel) return;
+            
+            // Sprint ends tomorrow at 17:00
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(17, 0, 0, 0);
+            
+            const diff = tomorrow.getTime() - Date.now();
+            if (diff <= 0) {
+                bentoLabel.textContent = "00d:00h:00m";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+
+            bentoLabel.textContent = `${String(days).padStart(2, '0')}d:${String(hours).padStart(2, '0')}h:${String(mins).padStart(2, '0')}m`;
+        }
+
+        function toggleAddTimerModal(isOpen) {
+            const modal = document.getElementById("modal-add-timer");
+            if (isOpen) {
+                modal.classList.remove("hidden");
+            } else {
+                modal.classList.add("hidden");
+                // Reset fields
+                document.getElementById("modal-input-title").value = "";
+                document.getElementById("modal-input-desc").value = "";
+            }
+        }
+
+        function handleCreateTimerSubmit(event) {
+            event.preventDefault();
+            
+            const title = document.getElementById("modal-input-title").value;
+            const desc = document.getElementById("modal-input-desc").value;
+            const date = document.getElementById("modal-input-date").value;
+            const time = document.getElementById("modal-input-time").value;
+            const accent = document.getElementById("modal-input-accent").value;
+            const alertVal = document.getElementById("modal-input-alert").value;
+
+            // Generate temporary unique ID
+            const newId = "timer-" + Math.random().toString(36).substr(2, 9);
+
+            const newTimer = {
+                id: newId,
+                title: title,
+                description: desc,
+                targetDate: date,
+                targetTime: time,
+                createdDate: new Date().toISOString(),
+                accent: accent,
+                alertType: alertVal,
+                totalMinutesSpan: 14400 // Default reference width sizing window
+            };
+
+            // Add to active session store
+            countdownsData.unshift(newTimer);
+
+            // Re-render Workspace view
+            renderTimersInWorkspace();
+            
+            // Close dialog overlay
+            toggleAddTimerModal(false);
+        }
+
+        function editCountdownPayload(id) {
+            const timer = countdownsData.find(t => t.id === id);
+            if (!timer) return;
+
+            // Pre-populate creation form fields
+            document.getElementById("modal-input-title").value = timer.title;
+            document.getElementById("modal-input-desc").value = timer.description;
+            document.getElementById("modal-input-date").value = timer.targetDate;
+            document.getElementById("modal-input-time").value = timer.targetTime;
+            document.getElementById("modal-input-accent").value = timer.accent;
+            document.getElementById("modal-input-alert").value = timer.alertType;
+
+            // Remove previous version from list on new form submission
+            countdownsData = countdownsData.filter(t => t.id !== id);
+
+            // Turn on Modal dialog
+            toggleAddTimerModal(true);
+        }
+
+        function deleteCountdownPayload(id) {
+            if (confirm("Are you sure you want to delete this event countdown?")) {
+                countdownsData = countdownsData.filter(t => t.id !== id);
+                renderTimersInWorkspace();
+            }
+        }
+
+        function launchCountdownCinematicDisplay(id) {
+            const timer = countdownsData.find(t => t.id === id);
+            if (!timer) return;
+
+            activeLiveDisplayTimerId = id;
+            
+            // Populate Big Stage details
+            document.getElementById("live-stage-title").textContent = timer.title;
+            document.getElementById("live-stage-description").textContent = timer.description || "Get ready as the timer approaches completion.";
+            
+            // Alter colors of display text according to target accent style
+            const bigSecs = document.getElementById("live-secs");
+            bigSecs.className = bigSecs.className.replace(/text-neon-\w+/g, '');
+            bigSecs.className = bigSecs.className.replace(/text-glow-\w+/g, '');
+            bigSecs.classList.add(`text-neon-${timer.accent}`);
+            bigSecs.classList.add(`text-glow-${timer.accent}`);
+
+            // Alter remaining bar colors
+            const indicatorBar = document.getElementById("live-progress-indicator-bar");
+            indicatorBar.style.backgroundImage = 'none';
+            if (timer.accent === 'cyan') {
+                indicatorBar.className = "bg-gradient-to-r from-cyan-600 to-cyan-300 h-full rounded-full transition-all duration-1000";
+            } else if (timer.accent === 'purple') {
+                indicatorBar.className = "bg-gradient-to-r from-purple-600 to-purple-300 h-full rounded-full transition-all duration-1000";
+            } else {
+                indicatorBar.className = "bg-gradient-to-r from-orange-600 to-orange-300 h-full rounded-full transition-all duration-1000";
+            }
+
+            // Switch layout visually
+            switchTab('live-display');
+        }
+
+        function exitLiveDisplay() {
+            activeLiveDisplayTimerId = null;
+            switchTab('dashboard');
+        }
+
+        function copyEmbedForPayload(id, buttonEl) {
+            const embedString = `<iframe src="https://chronosflow.co/embed/${id}" width="100%" height="200" frameborder="0"></iframe>`;
+            
+            // Generate fallback input to force selection mapping
+            const tempInput = document.createElement("input");
+            tempInput.value = embedString;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Change button feedback text temporarily
+            const originalText = buttonEl.innerHTML;
+            buttonEl.innerHTML = `<i class="fa-solid fa-check text-neon-cyan"></i> Copied Code`;
+            buttonEl.classList.add("border-neon-cyan");
+            setTimeout(() => {
+                buttonEl.innerHTML = originalText;
+                buttonEl.classList.remove("border-neon-cyan");
+            }, 2500);
+        }
+
+        function copySnippetText(buttonEl) {
+            const targetEmbed = `<iframe src="https://chronosflow.co/embed/v2-launch" width="100%" height="200" frameborder="0"></iframe>`;
+            
+            const tempInput = document.createElement("input");
+            tempInput.value = targetEmbed;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Visual feedback
+            const originalText = buttonEl.innerHTML;
+            buttonEl.innerHTML = `<i class="fa-solid fa-circle-check text-neon-cyan"></i> Copied Block!`;
+            setTimeout(() => {
+                buttonEl.innerHTML = originalText;
+            }, 2000);
+        }
+
+        function handleLiveSubscription(event) {
+            event.preventDefault();
+            
+            const emailInput = document.getElementById("live-subscribe-email");
+            if (emailInput.value.trim() !== "") {
+                document.getElementById("live-subscribe-success").classList.remove("hidden");
+                emailInput.value = "";
+                setTimeout(() => {
+                    document.getElementById("live-subscribe-success").classList.add("hidden");
+                }, 4000);
+            }
+        }
+    </script>
+</body>
+</html>
