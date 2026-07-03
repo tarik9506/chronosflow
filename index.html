@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronosFlow - Dynamic Event Countdown Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        space: {
+                            950: '#090D16',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155'
+                        },
+                        neon: {
+                            cyan: '#06B6D4',
+                            purple: '#A855F7',
+                            orange: '#F97316',
+                            lime: '#84CC16'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Web Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Injection for Particles, Glowing effects, and custom scrollbars -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090D16;
+            color: #F8FAFC;
+        }
+        .font-mono-tabular {
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel-neon {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.1);
+        }
+        .glass-panel-cyan {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
+        }
+        .text-glow-purple {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 0 0 40px rgba(168, 85, 247, 0.3);
+        }
+        .text-glow-cyan {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(6, 182, 212, 0.3);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+        /* Mesh background */
+        .mesh-bg {
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 80%, rgba(249, 115, 22, 0.1) 0px, transparent 50%);
+        }
+        /* Tab transition animations */
+        .page-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="mesh-bg min-h-screen overflow-x-hidden flex flex-col justify-between">
+
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-[20%] left-[-10%] w-[45vw] h-[45vw] bg-purple-900/10 rounded-full filter blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-[10%] right-[-10%] w-[50vw] h-[50vw] bg-cyan-900/10 rounded-full filter blur-[150px] animate-pulse" style="animation-duration: 8s;"></div>
+    </div>
+
+    <!-- MAIN HEADER NAVIGATION -->
+    <header class="sticky top-0 z-50 w-full glass-panel border-b border-white/5 backdrop-blur-md px-4 sm:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" onclick="switchTab('marketing')" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-cyan-400 p-[2px] shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform duration-300">
+                    <div class="w-full h-full bg-space-950 rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-hourglass-half text-transparent bg-clip-text bg-gradient-to-tr from-purple-400 to-cyan-300 text-lg"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-xl tracking-wider text-white">Chronos<span class="text-neon-cyan">Flow</span></span>
+                    <span class="block text-[9px] uppercase tracking-widest text-slate-400 font-semibold">Time Intelligence</span>
+                </div>
+            </a>
+
+            <!-- Public Marketing Site Nav (hidden if inside isolated live view) -->
+            <nav id="marketing-nav-links" class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#features-section" class="hover:text-neon-cyan transition-colors py-1">Features</a>
+                <a href="#integrations-section" class="hover:text-neon-purple transition-colors py-1">Integrations</a>
+                <a href="#pricing-section" class="hover:text-neon-orange transition-colors py-1">Pricing</a>
+                <a href="#" onclick="switchTab('dashboard')" class="text-slate-400 hover:text-white transition-colors py-1">Demo Workspace</a>
+            </nav>
+
+            <!-- Global Actions Block -->
+            <div class="flex items-center space-x-4">
+                <button onclick="switchTab('marketing')" id="btn-view-mkt" class="text-xs font-semibold px-4 py-2 border border-slate-800 rounded-lg text-slate-300 hover:text-white hover:bg-slate-900/50 transition-all hidden">
+                    <i class="fa-solid fa-home mr-1.5"></i> Marketing Site
+                </button>
+                <button onclick="switchTab('dashboard')" id="btn-workspace" class="relative group overflow-hidden rounded-xl p-[1px] focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all">
+                    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl"></span>
+                    <span class="relative block px-5 py-2.5 rounded-[11px] bg-space-950 text-white text-xs sm:text-sm font-bold transition-colors group-hover:bg-transparent duration-300">
+                        <i class="fa-solid fa-cube mr-1.5 text-neon-cyan group-hover:text-white"></i> Go to Workspace
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN INTERACTIVE CONTAINER -->
+    <main class="flex-grow z-10 w-full">
+
+        <!-- ==================== PAGE 1: MARKETING LANDING PAGE ==================== -->
+        <section id="page-marketing" class="page-transition block">
+            
+            <!-- Hero Layer -->
+            <div class="relative py-12 md:py-24 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-1 
